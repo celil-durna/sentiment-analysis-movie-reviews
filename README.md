@@ -66,6 +66,7 @@ To run this project, you need:
 
 - **Python** 3.10 or higher  
 - **Git LFS** (the dataset `movie_review_data.csv` is tracked with LFS)  
+
   ```bash
   git lfs install
   ```
@@ -87,11 +88,11 @@ pip install pandas numpy matplotlib
 
 ## How to run the code
 
-1. Clone the repository (recommended: skip auto LFS download).
+1. Clone the repository.
    
    To avoid issues while cloning, clone the repo with LFS auto-download disabled:
    ```bash
-   GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/celil-durna/sentiment-analysis-movie-reviews.git
+   git clone GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/celil-durna/sentiment-analysis-movie-reviews.git
    ```
    After cloning, `movie_review_data.csv` will usually be a small Git LFS pointer file (this is expected).
 
@@ -100,9 +101,9 @@ pip install pandas numpy matplotlib
 3. Get the dataset (choose one option).
    
    Option A: Download via Git LFS (recommended if the download finishes quickly for you)
-   ```bash
-   git lfs pull
-   ```
+      ```bash
+      git lfs pull
+      ```
    This downloads the real dataset file (~122 MB).
 
    Option B: Manual download (if `git lfs pull` is too slow)
