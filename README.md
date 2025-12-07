@@ -2,7 +2,7 @@
 
 Developed as a university project in a 2-person team using **pair programming**.
 
-This README provides an overview of the project and its subtasks, describes the repository file structure, lists the dependencies required to run the code, explaines how to run it, and summarizes our main results.
+This README provides an overview of the project and its subtasks, describes the repository file structure, lists the dependencies required to run the code, explains how to run it, and summarizes our main results.
 
 
 ---
@@ -65,7 +65,10 @@ The main steps of the project are structured into seven subtasks:
 To run this project, you need:
 
 - **Python** 3.10 or higher  
-- **Git LFS** (required to download `movie_review_data.csv` from the repository)  
+- **Git LFS** (the dataset `movie_review_data.csv` is tracked with LFS)  
+  ```bash
+  git lfs install
+  ```
 
 Python packages:
 
@@ -84,13 +87,29 @@ pip install pandas numpy matplotlib
 
 ## How to run the code
 
-1. Clone the repository (with Git LFS enabled).
-2. Navigate to the `sentiment-analysis-movie-reviews/` directory.
-3. To make sure the large dataset is downloaded via Git LFS, run the following command:
+1. Clone the repository (recommended: skip auto LFS download).
+   
+   To avoid issues while cloning, clone the repo with LFS auto-download disabled:
+   ```bash
+   GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/celil-durna/sentiment-analysis-movie-reviews.git
+   ```
+   After cloning, `movie_review_data.csv` will usually be a small Git LFS pointer file (this is expected).
 
+2. Navigate to the `sentiment-analysis-movie-reviews/` directory.
+
+3. Get the dataset (choose one option).
+   
+   Option A: Download via Git LFS (recommended if the download finishes quickly for you)
    ```bash
    git lfs pull
    ```
+   This downloads the real dataset file (~122 MB).
+
+   Option B: Manual download (if `git lfs pull` is too slow)
+   - Open the repository on GitHub in your browser
+   - Click `movie_review_data.csv` and download it manually
+   - Overwrite the small LFS pointer file (movie_review_data.csv) with the downloaded real CSV file
+
 4. Run the main script with the following command:
 
    ```bash
